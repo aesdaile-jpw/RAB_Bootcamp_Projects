@@ -191,7 +191,7 @@
             XYZ insPoint = new XYZ();
             XYZ insPoint2 = new XYZ(1, 0.5, 0);
 
-            Viewport newViewport = Viewport.Create(doc, newSheet.Id, newFloorPlan.Id, insPoint);
+            Viewport newViewport = Viewport.Create(doc, newSheet.Id, newFloorPlan.Id, insPoint2);
 
 
 
