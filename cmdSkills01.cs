@@ -10,6 +10,7 @@
             UIDocument uidoc = uiapp.ActiveUIDocument;
             Document doc = uidoc.Document;
 
+            #region Basic Routines
             string text1 = "some text";
             string text2 = "more text";
 
@@ -122,7 +123,7 @@
             {
                 numberCount += i;
             }
-
+            #endregion
 
 
             // Your Module 01 Skills code goes here
