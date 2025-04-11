@@ -18,7 +18,7 @@
             double floorHeightmm = 4572; // in mm because I'm metric
 
             double elevationFeet = 0;
-            double floorHeightFeet = floorHeightmm / 304.8; // meteric to imperial conversion for practice
+            double floorHeightFeet = floorHeightmm / 304.8; // metric to imperial conversion for practice
 
             Transaction t = new Transaction(doc, "Create Levels");
             t.Start("FizzBuzz Levels");
