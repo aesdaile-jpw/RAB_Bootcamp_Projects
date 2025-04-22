@@ -149,7 +149,6 @@ namespace RAB_Bootcamp_Projects
             FilteredElementCollector systemCollector = new FilteredElementCollector( doc );
             systemCollector.OfClass( typeof( MEPSystemType ) );
 
-            // 6 get duct type
             foreach ( MEPSystemType systemType in systemCollector )
             {
                 if ( systemType.Name == name )
@@ -166,7 +165,7 @@ namespace RAB_Bootcamp_Projects
             //  get all wall types
             FilteredElementCollector wallCollector = new FilteredElementCollector( doc );
             wallCollector.OfClass( typeof( WallType ) );
-            // 6 get duct type
+           
             foreach ( WallType wallType in wallCollector )
             {
                 if ( wallType.Name == name )
