@@ -201,7 +201,7 @@ namespace RAB_Bootcamp_Projects
             string returnString = $"This is my third method: {input}";
             return returnString;
         }
-
+        
         internal MEPSystemType GetSystemTypeByName(Document doc, string name)
         {  
             //  get all system types
@@ -219,6 +219,23 @@ namespace RAB_Bootcamp_Projects
             }
             return null;
         }
+
+        internal WallType GetWallTypeByName( Document doc, string name )
+        {
+            //  get all wall types
+            FilteredElementCollector wallCollector = new FilteredElementCollector( doc );
+            wallCollector.OfClass( typeof( WallType ) );
+            // 6 get duct type
+            foreach ( WallType wallType in wallCollector )
+            {
+                if ( wallType.Name == name )
+                {
+                    return wallType;
+                }
+            }
+            return null;
+        }
+        
     }
  
 
