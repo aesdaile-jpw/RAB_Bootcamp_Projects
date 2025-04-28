@@ -29,10 +29,18 @@ namespace RAB_Bootcamp_Projects
             .OfType<CurveElement>()
             .ToList();
 
+            // 2. filter selected elements using LINQ
+
+            List<CurveElement> filteredListLinq = pickList
+            .OfType<CurveElement>()
+            .Where( CurveElement => CurveElement.CurveElementType == CurveElementType.ModelCurve )
+            .ToList();
+
 
             using ( Transaction t = new Transaction( doc ) )
             {
                 t.Start( "Objects from lines" );
+                // be cautious with transactions in methods
 
                 List<CurveElement> modelCurves = new List<CurveElement>();
                 foreach ( Element elem in pickList )
