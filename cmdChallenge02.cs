@@ -36,6 +36,20 @@ namespace RAB_Bootcamp_Projects
             .Where( CurveElement => CurveElement.CurveElementType == CurveElementType.ModelCurve )
             .ToList();
 
+            // 1.Select all model lines in active view
+
+            FilteredElementCollector curveCollector = new FilteredElementCollector( doc, view.Id );
+
+            List<Element> modelLines = curveCollector
+                .OfClass( typeof( CurveElement ) )
+                .Cast<CurveElement>()
+                .Where( e => e.LineStyle != null && e.CurveElementType == CurveElementType.ModelCurve )
+                .Cast<Element>()
+                .ToList();
+
+            TaskDialog.Show( "Module 02 Challenge", $"There are {modelLines.Count} model lines in the active view." );
+
+
 
             using ( Transaction t = new Transaction( doc ) )
             {
