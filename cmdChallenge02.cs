@@ -23,6 +23,12 @@ namespace RAB_Bootcamp_Projects
             // TaskDialog.Show( "Test", $"I selected {pickList.Count} elements" );
 
             // Filter selected elements for model curves
+            // 2. filter selected elements using LINQ
+            // Doesn't use Filtered Element Collector
+            List<CurveElement> filteredList = pickList
+            .OfType<CurveElement>()
+            .ToList();
+
 
             using ( Transaction t = new Transaction( doc ) )
             {
