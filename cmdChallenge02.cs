@@ -38,6 +38,7 @@ namespace RAB_Bootcamp_Projects
 
             // 1.Select all model lines in active view
 
+            View view = doc.ActiveView;
             FilteredElementCollector curveCollector = new FilteredElementCollector( doc, view.Id );
 
             List<Element> modelLines = curveCollector
