@@ -14,6 +14,16 @@
             // Delete the TaskDialog below and add your code
             TaskDialog.Show("Module 03 Challenge", "Coming Soon!");
 
+            string filePath = @"C:\Users\Adrian.Esdaile\OneDrive\Documents\Code\ArchSmarter\Bootcamp Lessons\RAB_Module 03_Furniture List.xlsx";
+            List<RoomData> roomDataList = ExcelReader.ReadRoomDataFromExcel( filePath );
+
+            // Example: Print the RoomData
+            foreach ( var room in roomDataList )
+            {
+                Console.WriteLine( $"Name: {room.Name}, FamilyName: {room.FamilyName}, FamilyType: {room.FamilyType}, FamilyQuantity: {room.FamilyQuantity}" );
+            }
+
+
 
             return Result.Succeeded;
         }
