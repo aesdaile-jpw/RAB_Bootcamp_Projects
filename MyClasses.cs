@@ -44,5 +44,20 @@ namespace RAB_Bootcamp_Projects
             Area = _area;
         }
     }
+
+    public class RoomData
+    {
+        public string Name { get; set; }
+        public string FamilyName { get; set; }
+        public string FamilyType{ get; set; }
+        public int FamilyQuantity { get; set; }
+        public RoomData( string _name, string _FamilyName, string _FamilyType, int _FamilyQuantity )
+        {
+            Name = _name;
+            FamilyName = _FamilyName;
+            FamilyType = _FamilyType;
+            FamilyQuantity = _FamilyQuantity;
+        }
+    }
 }
 
