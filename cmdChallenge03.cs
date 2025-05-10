@@ -14,17 +14,20 @@
             // Delete the TaskDialog below and add your code
             TaskDialog.Show("Module 03 Challenge", "Coming Soon!");
 
-            /*  code below is to run excel import, might need fixing from excel import v2
-              
-            string filePath = @"C:\Users\Adrian.Esdaile\OneDrive\Documents\Code\ArchSmarter\Bootcamp Lessons\RAB_Module 03_Furniture List.xlsx";
-            List<RoomData> roomDataList = ExcelReader.ReadRoomDataFromExcel( filePath );
+            //  code below is to run excel import, might need fixing from excel import v2
 
-            // Example: Print the RoomData
-            foreach ( var room in roomDataList )
-            {
-                Console.WriteLine( $"Name: {room.Name}, FamilyName: {room.FamilyName}, FamilyType: {room.FamilyType}, FamilyQuantity: {room.FamilyQuantity}" );
-            }
-            */
+            //string filePath = @"""C:\Users\adria\OneDrive\Documents\Code\ArchSmarter\Bootcamp Lessons\RAB_Module 03_Furniture List.xlsx""";
+            //List<RoomData> roomDataList = ExcelReader.ReadRoomDataFromExcel( filePath );
+
+            //// Example: Print the RoomData
+            //foreach ( var room in roomDataList )
+            //{
+            //    Console.WriteLine( $"Name: {room.Name}, FamilyName: {room.FamilyName}, FamilyType: {room.FamilyType}, FamilyQuantity: {room.FamilyQuantity}" );
+            //}
+
+            List<RoomData> roomDataList = new List<RoomData>;
+            roomDataList.Add( new RoomData( "Classroom", "Desk", "Teacher", 1 ) );
+            roomDataList.Add( new RoomData( "Classroom", "Desk", "Student", 6 ) );
 
 
 
