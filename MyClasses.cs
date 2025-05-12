@@ -83,7 +83,7 @@ namespace RAB_Bootcamp_Projects
                     double furnitureCount = Utils.GetParameterValueAsDouble( room, "Furniture Count" );
                     string roomString = Utils.GetParameterValueAsString( room, BuiltInParameter.ROOM_NAME );
 
-                    if ( roomString == roomName )
+                    if ( roomString.Contains(roomName) )
                     {
                         FamilySymbol curFamily = Utils.GetFamilySymbolByName( doc, familySymbol, familyType );
                         curFamily.Activate(); // loads family type into project
