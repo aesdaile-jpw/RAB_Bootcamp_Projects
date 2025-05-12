@@ -20,6 +20,7 @@ namespace RAB_Bootcamp_Projects
             // TaskDialog.Show("Module 03 Challenge", "Coming Soon!");
 
             //  code below is to run excel import, might need fixing from excel import v2
+            // NOTE: Copy the ExcelReader.dlls to the Revit addins folder, or it won't work
 
             string filePath = @"C:\Users\Adrian.Esdaile\OneDrive\Documents\Code\ArchSmarter\Bootcamp Lessons\RAB_Module 03_Furniture List.xlsx";
             List<RoomData> roomDataList = ExcelReader.ReadRoomDataFromExcel( filePath );
