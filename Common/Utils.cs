@@ -41,7 +41,14 @@
             }
         }
 
-
+        public static void SetParameterValue( Element curElem, string paramName, double value )
+        {
+            Parameter curParam = curElem.LookupParameter( paramName );
+            if ( curParam != null )
+            {
+                curParam.Set( value );
+            }
+        }
 
         public static string GetParameterValueAsString( Element curElem, string paramName )
         {

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Autodesk.Revit.DB.Architecture;
+using Autodesk.Revit.DB.Structure;
+using RAB_Bootcamp_Projects.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,6 +60,49 @@ namespace RAB_Bootcamp_Projects
             FamilyName = _FamilyName;
             FamilyType = _FamilyType;
             FamilyQuantity = _FamilyQuantity;
+        }
+    }
+
+    public class RoomPopulator
+    {
+        public static void PopulateRooms( List<RoomData> roomDataList, Document doc )
+        {
+
+            for ( int i = 0; i < roomDataList.Count; i++ )
+            {
+                string roomName = roomDataList[ i ].Name;
+                string familySymbol = roomDataList[ i ].FamilyName;
+                string familyType = roomDataList[ i ].FamilyType;
+                int familyQuantity = roomDataList[ i ].FamilyQuantity;
+                // TaskDialog.Show( "Test", $"Room Name: {roomName}, Family Symbol: {familySymbol}, Family Type: {familyType}, Family Quantity: {familyQuantity}" );
+                FilteredElementCollector roomCollector = new FilteredElementCollector( doc );
+                roomCollector.OfCategory( BuiltInCategory.OST_Rooms );
+
+                foreach ( Room room in roomCollector )
+                {
+                    double furnitureCount = Utils.GetParameterValueAsDouble( room, "Furniture Count" );
+                    string roomString = Utils.GetParameterValueAsString( room, BuiltInParameter.ROOM_NAME );
+
+                    if ( roomString == roomName )
+                    {
+                        FamilySymbol curFamily = Utils.GetFamilySymbolByName( doc, familySymbol, familyType );
+                        curFamily.Activate(); // loads family type into project
+                        Location roomLocation = room.Location;
+                        LocationPoint roomLocPt = roomLocation as LocationPoint;
+                        XYZ roomPoint = roomLocPt.Point;
+
+                        for ( int j = 0; j < familyQuantity; j++ )
+                        {
+                            // create family instance
+                            FamilyInstance curFamInstance = doc.Create.NewFamilyInstance( roomLocPt.Point, curFamily, StructuralType.NonStructural );
+                            furnitureCount++;
+                            Utils.SetParameterValue( room, "Furniture Count", furnitureCount );
+                        }
+
+
+                    }
+                }
+            }
         }
     }
 }

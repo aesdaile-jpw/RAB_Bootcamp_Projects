@@ -1,9 +1,14 @@
-﻿namespace RAB_Bootcamp_Projects
+﻿using Autodesk.Revit.DB.Architecture;
+using Autodesk.Revit.DB.Structure;
+using Microsoft.VisualBasic.Logging;
+using RAB_Bootcamp_Projects.Common;
+
+namespace RAB_Bootcamp_Projects
 {
     [Transaction(TransactionMode.Manual)]
     public class cmdChallenge03 : IExternalCommand
     {
-        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+        public Result Execute( ExternalCommandData commandData, ref string message, ElementSet elements )
         {
             // Revit application and document variables
             UIApplication uiapp = commandData.Application;
@@ -12,24 +17,23 @@
 
             // Your Module 03 Challenge code goes here
             // Delete the TaskDialog below and add your code
-            TaskDialog.Show("Module 03 Challenge", "Coming Soon!");
+            // TaskDialog.Show("Module 03 Challenge", "Coming Soon!");
 
             //  code below is to run excel import, might need fixing from excel import v2
 
-            //string filePath = @"""C:\Users\adria\OneDrive\Documents\Code\ArchSmarter\Bootcamp Lessons\RAB_Module 03_Furniture List.xlsx""";
-            //List<RoomData> roomDataList = ExcelReader.ReadRoomDataFromExcel( filePath );
-
-            //// Example: Print the RoomData
-            //foreach ( var room in roomDataList )
-            //{
-            //    Console.WriteLine( $"Name: {room.Name}, FamilyName: {room.FamilyName}, FamilyType: {room.FamilyType}, FamilyQuantity: {room.FamilyQuantity}" );
-            //}
-
-            List<RoomData> roomDataList = new List<RoomData>;
-            roomDataList.Add( new RoomData( "Classroom", "Desk", "Teacher", 1 ) );
-            roomDataList.Add( new RoomData( "Classroom", "Desk", "Student", 6 ) );
+            string filePath = @"C:\Users\Adrian.Esdaile\OneDrive\Documents\Code\ArchSmarter\Bootcamp Lessons\RAB_Module 03_Furniture List.xlsx";
+            List<RoomData> roomDataList = ExcelReader.ReadRoomDataFromExcel( filePath );
 
 
+            using ( Transaction t = new Transaction( doc ) )
+            {
+                t.Start( "Place objects in rooms" );
+                // be cautious with transactions in methods
+
+                RoomPopulator.PopulateRooms( roomDataList, doc );
+
+                t.Commit();
+            }
 
             return Result.Succeeded;
         }

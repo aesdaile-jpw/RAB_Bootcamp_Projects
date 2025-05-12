@@ -71,10 +71,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Compile Remove="ExcelReader.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Remove="Resources\Module01.png" />
 	  <None Remove="Resources\Module02.png" />
 	  <None Remove="Resources\Module03.png" />
@@ -87,13 +83,8 @@
 	  <EmbeddedResource Include="Resources\Module03.png" />
 	  <EmbeddedResource Include="Resources\Module04.png" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="ExcelReader.cs" />
-	</ItemGroup>
 	
 	<ItemGroup>
-	  <PackageReference Include="EPPlus" Version="8.0.3" />
 	  <PackageReference Include="ExcelDataReader" Version="3.7.0" />
 	  <PackageReference Include="ExcelDataReader.DataSet" Version="3.7.0" />
 	  <PackageReference Include="System.Drawing.Common" Version="8.0.3" IncludeAssets="build; compile" PrivateAssets="All" />
