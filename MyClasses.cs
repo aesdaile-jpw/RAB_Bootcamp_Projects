@@ -48,6 +48,9 @@ namespace RAB_Bootcamp_Projects
         }
     }
 
+    /// <summary>
+    /// This class is used to store data for each room in the Excel file.
+    /// </summary>
     public class RoomData
     {
         public string Name { get; set; }
@@ -63,8 +66,16 @@ namespace RAB_Bootcamp_Projects
         }
     }
 
+    /// <summary>
+    /// This class is used to populate rooms with furniture.
+    /// </summary>
     public class RoomPopulator
     {
+        /// <summary>
+        /// Populate rooms with furniture from a list of room data.
+        /// </summary>
+        /// <param name="roomDataList"></param>
+        /// <param name="doc"></param>
         public static void PopulateRooms( List<RoomData> roomDataList, Document doc )
         {
 
