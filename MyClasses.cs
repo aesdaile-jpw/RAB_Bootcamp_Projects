@@ -89,7 +89,7 @@ namespace RAB_Bootcamp_Projects
                         curFamily.Activate(); // loads family type into project
                         Location roomLocation = room.Location;
                         LocationPoint roomLocPt = roomLocation as LocationPoint;
-                        XYZ roomPoint = roomLocPt.Point;
+                        // XYZ roomPoint = roomLocPt.Point;
 
                         for ( int j = 0; j < familyQuantity; j++ )
                         {
