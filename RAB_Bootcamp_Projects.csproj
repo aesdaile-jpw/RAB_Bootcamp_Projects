@@ -86,11 +86,11 @@
 	
 	<ItemGroup>
 	  <PackageReference Include="ExcelDataReader" Version="3.7.0">
+	    <PrivateAssets>All</PrivateAssets>
 	    <IncludeAssets>build; compile</IncludeAssets>
-	    <PrivateAssets>all</PrivateAssets>
 	  </PackageReference>
 	  <PackageReference Include="ExcelDataReader.DataSet" Version="3.7.0">
-	    <PrivateAssets>all</PrivateAssets>
+	    <PrivateAssets>All</PrivateAssets>
 	    <IncludeAssets>build; compile</IncludeAssets>
 	  </PackageReference>
 	  <PackageReference Include="System.Drawing.Common" Version="8.0.3" IncludeAssets="build; compile" PrivateAssets="All" />
