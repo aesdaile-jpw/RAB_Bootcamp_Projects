@@ -2,6 +2,7 @@
 using Autodesk.Revit.DB.Structure;
 using Microsoft.VisualBasic.Logging;
 using RAB_Bootcamp_Projects.Common;
+using ExcelDataReader;
 
 namespace RAB_Bootcamp_Projects
 {
@@ -27,6 +28,7 @@ namespace RAB_Bootcamp_Projects
             string filePath = @"C:\Users\adria\OneDrive\Documents\Code\ArchSmarter\Bootcamp Lessons\RAB_Module 03_Furniture List.xlsx";
 
             List<RoomData> roomDataList = ExcelReader.ReadRoomDataFromExcel( filePath );
+
 
             using ( Transaction t = new Transaction( doc ) )
             {
