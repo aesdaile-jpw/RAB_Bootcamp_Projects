@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Resources
+using System.Resources;
+using System.Windows.Media.Imaging;
+
 
 namespace RAB_Bootcamp_Projects
 {
@@ -49,13 +51,13 @@ namespace RAB_Bootcamp_Projects
                 "button1",
                 "Command 1",
                 Assembly.GetExecutingAssembly().Location,
-                "RAB_Bootcamp_Projects.Command1" );
+                "RAB_Bootcamp_Projects.cmdSkills04" );
 
             PushButtonData buttonData2 = new PushButtonData(
                 "button2",
                 "Button \r Command 2",
                  Assembly.GetExecutingAssembly().Location,
-                 "RAB_Bootcamp_Projects.Command2" );
+                 "RAB_Bootcamp_Projects.cmdSkills04" );
             // add tooltips
 
             buttonData1.ToolTip = "This is a tooltip for Command 1";
