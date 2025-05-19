@@ -71,6 +71,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Blue_16.png" />
+	  <None Remove="Resources\Blue_32.png" />
+	  <None Remove="Resources\Green_16.png" />
+	  <None Remove="Resources\Green_32.png" />
 	  <None Remove="Resources\Module01.png" />
 	  <None Remove="Resources\Module02.png" />
 	  <None Remove="Resources\Module03.png" />
@@ -78,6 +82,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Include="Resources\Blue_16.png" />
+	  <EmbeddedResource Include="Resources\Blue_32.png" />
+	  <EmbeddedResource Include="Resources\Green_16.png" />
+	  <EmbeddedResource Include="Resources\Green_32.png" />
 	  <EmbeddedResource Include="Resources\Module01.png" />
 	  <EmbeddedResource Include="Resources\Module02.png" />
 	  <EmbeddedResource Include="Resources\Module03.png" />
