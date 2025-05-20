@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Resources;
-using System.Windows.Media.Imaging;
+using System.Windows.Media.Imaging; // need this for Bitmap functions
 
 
 namespace RAB_Bootcamp_Projects
@@ -36,6 +36,7 @@ namespace RAB_Bootcamp_Projects
 
             RibbonPanel panel = application.CreateRibbonPanel( tabname, panelName1 );
             RibbonPanel panel2 = application.CreateRibbonPanel( panelName2 );
+
             // RibbonPanel panel3 = application.CreateRibbonPanel( "Architecture", panelName3 );
             // can't use built-in panels
 

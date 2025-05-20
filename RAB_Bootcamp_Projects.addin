@@ -10,7 +10,7 @@
   </AddIn>
 
 	<AddIn Type="Application">
-		<Name>RAB Skills Module 04</Name>
+		<Name>RAB Skills Module 04 - Appskills</Name>
 		<Assembly>RAB_Bootcamp_Projects\RAB_Bootcamp_Projects.dll</Assembly>
 		<FullClassName>RAB_Bootcamp_Projects.AppSkills</FullClassName>
 		<ClientId>31652B98-F16A-4A2F-A7F0-65C9FC1BF13E</ClientId>
